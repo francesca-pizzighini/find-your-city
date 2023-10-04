@@ -17,7 +17,7 @@
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `body{background-color:coral;color:#f5f5f5}body h1{text-decoration:underline}body p{font-size:50px}`, ""]);
+___CSS_LOADER_EXPORT___.push([module.id, `body{background-color:coral;color:#f5f5f5;font-family:"Oswald",sans-serif}body h1{text-decoration:underline}body p{font-size:50px}`, ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -526,7 +526,7 @@ var update = injectStylesIntoStyleTag_default()(style/* default */.Z, options);
        /* harmony default export */ const css_style = (style/* default */.Z && style/* default */.Z.locals ? style/* default */.Z.locals : undefined);
 
 ;// CONCATENATED MODULE: ./src/assets/img/favicon.png
-const favicon_namespaceObject = __webpack_require__.p + "4bd98af8917d872c43d6.png";
+const favicon_namespaceObject = __webpack_require__.p + "7267b11e6e0436d0fabb.png";
 ;// CONCATENATED MODULE: ./src/assets/js/favicon.js
 
 function appendFavicon() {
