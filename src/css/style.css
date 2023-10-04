@@ -1,0 +1,10 @@
+body {
+  background-color: coral;
+  color: whitesmoke;
+}
+body h1 {
+  text-decoration: underline;
+}
+body p {
+  font-size: 50px;
+}

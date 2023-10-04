@@ -1,0 +1,14 @@
+$bg : coral;
+$color-text : whitesmoke;
+
+body{
+    background-color: $bg;
+    color: $color-text;
+
+    h1{
+        text-decoration: underline;
+    }
+    p{
+        font-size: 50px;
+    }
+}
