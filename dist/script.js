@@ -526,7 +526,7 @@ var update = injectStylesIntoStyleTag_default()(style/* default */.Z, options);
        /* harmony default export */ const css_style = (style/* default */.Z && style/* default */.Z.locals ? style/* default */.Z.locals : undefined);
 
 ;// CONCATENATED MODULE: ./src/assets/img/favicon.png
-const favicon_namespaceObject = __webpack_require__.p + "136824f01dac394eaec1.png";
+const favicon_namespaceObject = __webpack_require__.p + "4bd98af8917d872c43d6.png";
 ;// CONCATENATED MODULE: ./src/assets/js/favicon.js
 
 function appendFavicon() {

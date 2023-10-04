@@ -1,6 +1,9 @@
 {
   "name": "progetto-javascript-advanced-di-francesca-pizzighini",
   "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/francesca-pizzighini/BestCityToLive"
+  },
   "description": "Are you curious about what is the cost of living in the city of your dreams? About housing situation? Safety? Type the name of the city and discover all this information and more!",
   "main": "index.js",
   "scripts": {

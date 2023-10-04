@@ -38,7 +38,7 @@ module.exports = {
     
     plugins: [
         new htmlWebpackPlugin({
-            title: 'Best city to live',
+            title: 'Find your city',
             minimize: false,
             template: './src/index.html'
         })
