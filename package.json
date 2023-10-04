@@ -1,12 +1,12 @@
 {
   "name": "progetto-javascript-advanced-di-francesca-pizzighini",
   "version": "1.0.0",
-  "description": "Find the best city to live",
+  "description": "Are you curious about what is the cost of living in the city of your dreams? About housing situation? Safety? Type the name of the city and discover all this information and more!",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode=production",
     "build:dev": "webpack --mode=development",
-    "dev": "webpack server"
+    "dev": "webpack server --mode=production"
   },
   "keywords": [],
   "author": "Francesca Pizzighini",

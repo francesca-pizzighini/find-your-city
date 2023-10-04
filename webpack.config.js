@@ -4,7 +4,7 @@ const htmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
 
     entry: {
-        'index': './src/js/index.js'
+        'index': './src/assets/js/index.js'
     },
 
     output: {
@@ -28,12 +28,18 @@ module.exports = {
                     presets : ['@babel/preset-env']
                 }
             }
+        },
+
+        {
+            test: /\.(jpe?g|png|webp)/i,
+            type: 'asset/resource'
         }
     ]},
     
     plugins: [
         new htmlWebpackPlugin({
             title: 'Best city to live',
+            minimize: false,
             template: './src/index.html'
         })
     ],
@@ -50,5 +56,7 @@ module.exports = {
 
     optimization: {
         minimize: false
-    }
+    },
+
+    mode : 'production'
 }
