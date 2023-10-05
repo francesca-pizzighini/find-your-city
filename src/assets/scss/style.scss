@@ -1,3 +1,5 @@
+@import "bootstrap/scss/bootstrap";
+
 $bg : coral;
 $color-text : whitesmoke;
 
@@ -9,9 +11,10 @@ body{
     font-family: 'Oswald', sans-serif;
 
     h1{
-        text-decoration: underline;
+        color: aquamarine;
+        font-size: 50px;
     }
     p{
-        font-size: 50px;
+        font-size: 20px;
     }
 }
