@@ -1,20 +1,32 @@
 @import "bootstrap/scss/bootstrap";
 
-$bg : coral;
-$color-text : whitesmoke;
-
 
 
 body{
-    background-color: $bg;
-    color: $color-text;
+    
     font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    color: black;
 
     h1{
-        color: aquamarine;
+        color: grey;
         font-size: 50px;
     }
     p{
         font-size: 20px;
+    }
+
+    #input-search{
+        // #search-bar{
+        //     text-transform: capitalize;
+        // }
+
+        #search-suggestion{
+            ul{
+                li:hover{
+                    background-color: grey;
+                }
+            }
+        }
     }
 }

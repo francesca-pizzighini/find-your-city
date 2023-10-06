@@ -20,7 +20,7 @@ module.exports = {
         },
 
         {
-            test : /\.js$/i,
+            test : /\.['.js', '.jsx', '.ts', '.tsx']$/i,
             exclude : /node_modules/,
             use : {
                 loader : 'babel-loader',
@@ -31,7 +31,7 @@ module.exports = {
         },
 
         {
-            test: /\.(jpe?g|png|webp)/i,
+            test: /\.(jpe?g|png|webp)$/i,
             type: 'asset/resource'
         }
     ]},
