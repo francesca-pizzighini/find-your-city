@@ -8,12 +8,19 @@ const _ = require('lodash');
 import appendFavicon from './favicon';
 document.head.appendChild(appendFavicon())
 
+
+
+
+
 //useful functions
 function createElement(element, externalElement, classList, idName ){
     element.classList = `${classList}`;
     element.setAttribute('id', `${idName}`);
     externalElement.appendChild(element);
 }
+
+
+
 
 
 
@@ -27,6 +34,14 @@ let ul = document.createElement('ul');
 createElement(ul, suggestion, 'list-group', 'suggestion-ul')
 let suggestioUl = document.getElementById('suggestion-ul');
 
+// let xBtn = document.getElementById('x-btn');
+// xBtn.addEventListener('click', eraseCity)
+
+// function eraseCity(){
+//     input.value = ' ';
+// }
+
+//download list of city from the api
 async function createArrayOfCity(){
     try{
         let download = await axios.get(`https://api.teleport.org/api/urban_areas/`);
@@ -35,11 +50,9 @@ async function createArrayOfCity(){
         cityList.forEach(city => {
             arrayOfCity.push(city.name)
         });
-        // arrayOfCity= cityList.map((city)=>{
-        //     return city.name
-        // })
+        console.log(arrayOfCity)
     }catch(error){
-        console.log('error: ', console.error);
+        console.log('Error: ', console.error);
     }
 };
 createArrayOfCity();
@@ -76,7 +89,7 @@ function autocompleteMatch(value){
     if(value == ''){
         failedResearchAlert.classList.remove('d-none')
         suggestion.classList.add('d-none')
-        failedResearchAlert.innerText = 'write the name of a city'
+        failedResearchAlert.innerText = 'Error: please type the name of the city you want to check'
         return []
     }
     

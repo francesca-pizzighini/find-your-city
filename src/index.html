@@ -32,16 +32,42 @@
     <meta name="twitter:image" content="https://i.pinimg.com/564x/54/a8/51/54a85150c6ae0c102258f3297ab4b940.jpg" />
 </head>
 <body>
-    <h1>Ciao</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolorum vero voluptatem, doloribus nisi, debitis necessitatibus doloremque asperiores illum amet et ipsam quis temporibus aperiam exercitationem harum tenetur facilis beatae porro commodi? Facilis magni mollitia perferendis, eos quas velit et minima assumenda. A rem reiciendis commodi quas repellat.</p>
+    <header>
+        <h1>Find your city</h1>
+    
 
-    <section id="input-search">
-        <input type="text" placeholder="enter the city name" id="search-bar" class="border-secondary border-1">
-        <button class="btn btn-primary">cerca</button>
-        <div id="search-suggestion" class="p-3 bg-secondary d-none"></div>
+        <div id="search-bar-wrapper">
+            <div id="input-box">
+                <input type="text" placeholder="enter a city name" id="search-bar" class="form-control">
+                
+                <button class="btn btn-outline-secondary" type="button" id="x-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+                    </svg>
+                </button>
+                
+                <button class="btn btn-outline-secondary" type="button" id="search-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                </button>
+            </div>
 
-        <div class="alert alert-danger d-none" role="alert" id="failed-research-alert"></div>
-    </section>
+            <div id="search-suggestion" class="d-none">
+            </div>
+
+            <div id="failed-research-alert" class="alert alert-danger d-none" role="alert"></div>
+            </div>
+
+        </div>
+
+    </header>
+
+
     
 
 </body>
