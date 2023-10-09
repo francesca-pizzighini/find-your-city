@@ -68,11 +68,11 @@ function autocomplete(input){
         createElement(li, ul, 'list-group-item', '')
         li.innerHTML = `${city}`;
 
-        li.addEventListener('click', seleziona);
+        li.addEventListener('click', select);
     });
 };
 
-function seleziona(event){
+function select(event){
     let cityName =event.target.textContent;
     input.value = cityName;
     while(suggestion.firstChild){

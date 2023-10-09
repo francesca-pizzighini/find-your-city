@@ -131,11 +131,24 @@ $brown: #483519;
             font-size: 6rem;
         }
 
-        #failed-research-alert{
-            width: 500px;
-            position: relative;
-            left:-100px;
-        }
+        #search-bar-wrapper{
+            width: 400px;
+
+            #input-box{
+                width: 400px;
+            }
+
+            #search-suggestion{
+                li{
+                    width: 400px;
+                }
+            }
+            #failed-research-alert{
+                width: 500px;
+                position: relative;
+                left:-50px;
+            }
+        }        
     }
 }
 
@@ -145,10 +158,24 @@ $brown: #483519;
             font-size: 7rem;
         }
 
-        #failed-research-alert{
-            width: 600px;
-            position: relative;
-            left:-150px;
-        }
+        #search-bar-wrapper{
+            width: 400px;
+
+            #input-box{
+                width: 400px;
+            }
+
+            #search-suggestion{
+                li{
+                    width: 400px;
+                }
+            }
+            #failed-research-alert{
+                width: 600px;
+                position: relative;
+                left:-100px;
+            }
+        } 
+
     }
 }
