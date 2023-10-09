@@ -130,7 +130,6 @@ $brown: #483519;
 
         #info-or-city, #instructions-or-data{
             width: 300px;
-            background-color: $light-color;
             border-radius: 5px;
             height: fit-content;
             padding :25px;
@@ -140,14 +139,21 @@ $brown: #483519;
             flex-direction: column;
             justify-content: space-between;  
             margin-top: 50px; 
+            background-color: $light-color;
         }
 
         #instructions-or-data{
+            color: $light-color;
             flex-direction: column;
-            align-items: center;
-            margin-top: 25px;
+            align-items: start;
+            background-color: $brown;
+
+            h3, ol li{
+                color: $light-color;
+            }
 
             h3{
+                color: $light-color;
                 text-transform: uppercase;
             }
         }
@@ -262,37 +268,27 @@ $brown: #483519;
         align-items: start;
 
         #instructions-or-data{
-            flex-direction: column;
             align-items: end;
             width: 30vw;
-            background-color: $brown;
             margin-top: 50px;
 
-            h3, ol li{
-                color: $light-color;
-            }
             h3{
-                text-align: right;
                 padding-bottom: 15px;
             }
+            
             ol{
                 width: 252px;
 
                 li{
                     padding-left: 15px;
-                }
-                
+                }   
             }
-            
-
         }
 
         #info-or-city{
             width: 70vw;
             margin-right: 25px;
+            margin-bottom: 25px;
         }
-        // #info-or-city, #instructions-or-data{
-            
-        // }
     }
 }
