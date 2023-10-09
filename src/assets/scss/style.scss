@@ -1,6 +1,7 @@
 @import "bootstrap/scss/bootstrap";
 
 $light-color: #F4F5F5;
+$lightgrey: lightgrey;
 $dark-color: #231c07;
 $brown: #483519;
 
@@ -15,19 +16,21 @@ $brown: #483519;
         font-family: 'Oswald', sans-serif;
         font-size: 20px;
         color: $dark-color;
+
+        .wrapper{
+            display: flex;
+        }
     }
 
     header{
-        display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         height: 300px;
-        // background-color: aqua;
         background-image: url("https://getwallpapers.com/wallpaper/full/2/e/b/151107.jpg");
         background-size: cover ;
         background-position: center;
         position: relative;
-        }
+        
 
         h1{
             color: $light-color;
@@ -48,7 +51,6 @@ $brown: #483519;
             #input-box{
                 width: 300px;
                 height: 50px;
-                display: flex;
                 background-color: $light-color;
                 border-radius: 5px;
 
@@ -77,11 +79,11 @@ $brown: #483519;
                     li{
                         width: 300px;
                         height: 50px;
-                        border-bottom: 1px solid lightgray;
+                        border-bottom: 1px solid $lightgrey;
                         margin:0;
                     }
                     li:hover{
-                        background-color: lightgray;
+                        background-color: $lightgrey;
                     }
                 }
             }
@@ -90,7 +92,66 @@ $brown: #483519;
                 font-size: 1rem;
             }
         }
+    }
 
+    #city-information{
+        flex-direction: column;
+        align-items: center;
+        color: $dark-color;
+
+        h2, h3{
+            color: $brown;
+        }
+
+        h2{
+            font-size: 50px;
+            text-transform: uppercase;
+        }
+
+        h3{
+            font-size: 30px;
+        }
+
+        p{
+            font-size: 16px;
+
+            span{
+                color: #B4BBBB;
+
+                a{
+                    text-decoration: none;
+                    color: #B4BBBB;
+                }
+                a:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        #info-or-city, #instructions-or-data{
+            width: 300px;
+            background-color: $light-color;
+            border-radius: 5px;
+            height: fit-content;
+            padding :25px;
+        }
+
+        #info-or-city{
+            flex-direction: column;
+            justify-content: space-between;  
+            margin-top: 50px; 
+        }
+
+        #instructions-or-data{
+            flex-direction: column;
+            align-items: center;
+            margin-top: 25px;
+
+            h3{
+                text-transform: uppercase;
+            }
+        }
+    }
 }
 
 
@@ -109,6 +170,12 @@ $brown: #483519;
             font-size: 4rem;
         }
     }
+
+    #city-information{
+        #info-or-city, #instructions-or-data{
+            width: 400px;
+        }
+    }
 }
 
 @media only screen and (min-width: 500px) and (max-width: 699px) {
@@ -121,6 +188,12 @@ $brown: #483519;
             width: 400px;
             position: relative;
             left:-50px;
+        }
+    }
+
+    #city-information{
+        #info-or-city, #instructions-or-data{
+            width: 500px;
         }
     }
 }
@@ -150,6 +223,12 @@ $brown: #483519;
             }
         }        
     }
+
+    #city-information{
+        #info-or-city, #instructions-or-data{
+            width: 600px;
+        }
+    }
 }
 
 @media only screen and (min-width: 900px){
@@ -176,6 +255,44 @@ $brown: #483519;
                 left:-100px;
             }
         } 
+    }
 
+    #city-information{
+        flex-direction: row-reverse;
+        align-items: start;
+
+        #instructions-or-data{
+            flex-direction: column;
+            align-items: end;
+            width: 30vw;
+            background-color: $brown;
+            margin-top: 50px;
+
+            h3, ol li{
+                color: $light-color;
+            }
+            h3{
+                text-align: right;
+                padding-bottom: 15px;
+            }
+            ol{
+                width: 252px;
+
+                li{
+                    padding-left: 15px;
+                }
+                
+            }
+            
+
+        }
+
+        #info-or-city{
+            width: 70vw;
+            margin-right: 25px;
+        }
+        // #info-or-city, #instructions-or-data{
+            
+        // }
     }
 }
