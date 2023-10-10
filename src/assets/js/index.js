@@ -9,18 +9,12 @@ import appendFavicon from './favicon';
 document.head.appendChild(appendFavicon())
 
 
-
-
-
 //useful functions
 function createElement(element, externalElement, classList, idName ){
     element.classList = `${classList}`;
     element.setAttribute('id', `${idName}`);
     externalElement.appendChild(element);
 }
-
-
-
 
 
 
@@ -34,12 +28,7 @@ let ul = document.createElement('ul');
 createElement(ul, suggestion, 'list-group', 'suggestion-ul')
 let suggestioUl = document.getElementById('suggestion-ul');
 
-// let xBtn = document.getElementById('x-btn');
-// xBtn.addEventListener('click', eraseCity)
-
-// function eraseCity(){
-//     input.value = ' ';
-// }
+let cityName;
 
 //download list of city from the api
 async function createArrayOfCity(){
@@ -50,7 +39,7 @@ async function createArrayOfCity(){
         cityList.forEach(city => {
             arrayOfCity.push(city.name)
         });
-        console.log(arrayOfCity)
+        // console.log(arrayOfCity)
     }catch(error){
         console.log('Error: ', console.error);
     }
@@ -73,11 +62,8 @@ function autocomplete(input){
 };
 
 function select(event){
-    let cityName =event.target.textContent;
+    cityName = event.target.textContent;
     input.value = cityName;
-    while(suggestion.firstChild){
-        suggestion.removeChild(suggestion.firstChild);
-    }
     suggestion.classList.add('d-none');
 };
 
@@ -101,6 +87,7 @@ function autocompleteMatch(value){
             return city
         }
     })
+    
 };
 
 
@@ -108,10 +95,137 @@ function autocompleteMatch(value){
 
 
 
+//City data
+//setup
+let bannerName = document.getElementById('banner-name')
+let h2CityName = document.getElementById('city-name')
+let nameOfTheCity;
+
+let continent = document.getElementById('continent')
+let continentName;
+
+let banner = document.getElementById('banner');
+
+let summaryOrPresentation = document.getElementById('summary-or-presentation');
+let summarytext;
+
+let instructionsOrScores = document.getElementById('instruction-scores');
+let scoresData = document.getElementById('scores-data')
 
 
 
 
+
+let searchBtn = document.getElementById('search-btn');
+searchBtn.addEventListener('click', search);
+
+async function search(){
+    let urlValue =  await adjustValue(cityName)
+    //Name and country
+    let cityInfo = await axios.get(`https://api.teleport.org/api/urban_areas/slug:${urlValue}/`);
+    
+    appendInfo(cityInfo, 'data.name', 'An error occurred,please try realoding the page', bannerName, nameOfTheCity);
+    appendInfo(cityInfo, 'data.name', 'An error occurred,please try realoding the page', h2CityName, nameOfTheCity);
+
+    appendInfo(cityInfo, 'data.continent', 'An error occurred,please try realoding the page', continent, continentName);
+
+    //image banner
+    let cityImage = await axios.get(`https://api.teleport.org/api/urban_areas/slug:${urlValue}/images/`)
+    let imageUrl = await _.get(cityImage, 'data.photos.0.image.web', 'An error occurred,please try realoding the page')
+    banner.style.backgroundImage = `url(${imageUrl})`;
+
+    //description and scores
+    let cityScores = await axios.get(`https://api.teleport.org/api/urban_areas/slug:${urlValue}/scores/`);
+    console.log(cityScores)
+
+    //summary
+    eraseFirstChild(summaryOrPresentation);
+    appendHtml(cityScores, 'data.summary', 'An error occurred,please try realoding the page', summarytext, summaryOrPresentation);
+
+    //scores
+    instructionsOrScores.innerText = 'City scores';
+    eraseFirstChild(scoresData);
+
+    let categoryNumber = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+    categoryNumber.forEach((number)=>{
+        appendScores(cityScores, `data.categories.${number}.score_out_of_10`, `data.categories.${number}.name`, 'An error occurred,please try realoding the page', scoresData);
+    })
+
+    
+
+
+
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+    
+
+    // let quebec = await axios.get(`https://api.teleport.org/api/urban_areas/slug:quebec/`);
+    // console.log(quebec);
+    
+    // appendInfo()
+}
+
+function adjustValue(value){
+    value = value.toLowerCase();
+    value = value.trim();
+    value = value.replaceAll(' ', '-')
+    return value;
+}
+
+async function appendInfo(download, path, error, element, text){
+    text = await _.get(download, `${path}`, `${error}` );
+    element.innerText = text;
+}
+
+async function appendHtml(download, path, error, element, externalElement){
+    element = await _.get(download, `${path}`, `${error}` );
+    externalElement.innerHTML += element;
+}
+
+async function eraseFirstChild(element){
+    while(element.firstChild){
+        element.removeChild(element.firstChild)
+    };
+}
+
+async function appendScores(download, pathNumber, pathName, error, externalElement){
+    let divName = document.createElement('div');
+    
+    let number = await _.get(download, pathNumber, error);
+    number = Math.round(number);
+
+    let name = await _.get(download, pathName, error);
+
+    createElement(divName, externalElement, 'score', ' ');
+    divName.innerHTML += `<p>${name} : ${number}</p><div class="out-of-ten"><div class="bg-lightcolor lenght-${number}"></div></div>`;
+}
+
+// async function appendScores(divName, number, name, download, pathNumber, pathName, error, externalElement){
+//     divName = document.createElement('div');
+    
+//     number = await _.get(download, pathNumber, error);
+//     number = Math.round(number);
+
+//     name = await _.get(download, pathName, error);
+
+//     createElement(divName, externalElement, ' ', ' ');
+//     divName.innerHTML += `<p>${name} : ${number}</p><div class="bg-lightcolor lenght-${number}"></div>`;
+// }
 
 
 

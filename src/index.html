@@ -32,21 +32,21 @@
     <meta name="twitter:image" content="https://i.pinimg.com/564x/54/a8/51/54a85150c6ae0c102258f3297ab4b940.jpg" />
 </head>
 <body>
-    <header class="wrapper">
-        <h1>Find your city</h1>
+    <header id="banner" class="wrapper">
+        <h1 id="banner-name">Find your city</h1>
     
 
         <div id="search-bar-wrapper">
             <div id="input-box" class="wrapper">
                 <input type="text" placeholder="enter a city name" id="search-bar" class="form-control">
                 
-                <button class="btn btn-outline-secondary" type="button" id="x-btn">
+                <!-- <button class="btn btn-outline-secondary" type="button" id="x-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg"
                         viewBox="0 0 16 16">
                         <path
                             d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
                     </svg>
-                </button>
+                </button> -->
                 
                 <button class="btn btn-outline-secondary" type="button" id="search-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search"
@@ -69,23 +69,32 @@
 
     <section class="wrapper" id="city-information">
         <div id="info-or-city" class="wrapper">
-            <h2>start the journey</h2>
-            <h3>You're only few clicks away from your dream city</h3>
-            <p>Have you ever been tempted to simply run away and start a new life in another city? Unless you've committed some crime remember that Mexico is not the only option. <br>
-            With this website you won't be unprepared anymore. With few clicks you'll easily find out main informations of a city, and also a lot of interesting data. Are you curious about what is the cost of living? Housing situation? Safety? <br>
-            Follow the instructions and discover it right away. <br>
-            <span>The service is provided thanks to <a href="https://developers.teleport.org" target="_blank">Teleport</a></span>
-            </p>
+            <h2 id="city-name">start the journey</h2>
+            <h3 id="continent">You're only few clicks away from your dream city</h3>
+            <div id="summary-or-presentation">
+                <p>
+                    Have you ever been tempted to simply run away and start a new life in another city? Unless you've committed some
+                    crime remember that Mexico is not the only option. <br>
+                    With this website you won't be unprepared anymore. With few clicks you'll easily find out main informations of a
+                    city, and also a lot of interesting data. Are you curious about what is the cost of living? Housing situation?
+                    Safety? <br>
+                    Follow the instructions and discover it right away. <br>
+                    <span>The service is provided thanks to <a href="https://developers.teleport.org"
+                            target="_blank">Teleport</a></span>
+                </p>
+            </div>
         </div>
 
         <div id="instructions-or-data" class="wrapper">
-            <h3>Instructions</h3>
+            <h3 id="instruction-scores">Instructions</h3>
 
-            <ol>
-                <li>Type the city of your dreams</li>
-                <li>Press the search button</li>
-                <li>Enjoy your result</li>
-            </ol>
+            <div id="scores-data">
+                <ol>
+                    <li>Type the city of your dreams</li>
+                    <li>Press the search button</li>
+                    <li>Enjoy your result</li>
+                </ol>
+            </div>
         </div>
     </section>
 

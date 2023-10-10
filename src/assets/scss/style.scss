@@ -156,6 +156,72 @@ $brown: #483519;
                 color: $light-color;
                 text-transform: uppercase;
             }
+
+            .score{
+                p{
+                    font-size: 20px;
+                    margin-bottom: 5px;
+                }
+                .out-of-ten{
+                    margin-top: 0px;
+                    margin-bottom: 25px;
+                }
+                .out-of-ten{
+                    width: 202px;
+                    height: 12px;
+                    background-color: $brown;
+                    border: 1px solid $light-color;
+
+                    .bg-lightcolor{
+                        background-color: $light-color;
+                        height: 10px;
+                    }
+
+                    .lenght-0{
+                        width: 0px;
+                        margin-right: 197px;
+                    }
+                    .lenght-1{
+                        width: 20px;
+                        margin-right: 180px;
+                    }
+                    .lenght-2{
+                        width: 40px;
+                        margin-right: 160px;
+                    }
+                    .lenght-3{
+                        width: 60px;
+                        margin-right: 140px;
+                    }
+                    .lenght-4{
+                        width: 80px;
+                        margin-right: 120px;
+                    }
+                    .lenght-5{
+                        width: 100px;
+                        margin-right: 100px;
+                    }
+                    .lenght-6{
+                        width: 120px;
+                        margin-right: 80px;
+                    }
+                    .lenght-7{
+                        width: 140px;
+                        margin-right: 60px;
+                    }
+                    .lenght-8{
+                        width: 160px;
+                        margin-right: 40px;
+                    }
+                    .lenght-9{
+                        width: 180px;
+                        margin-right: 20px;
+                    }
+                    .lenght-10{
+                        width: 200px;
+                    }
+                }                
+            }
         }
     }
 }
@@ -201,6 +267,16 @@ $brown: #483519;
         #info-or-city, #instructions-or-data{
             width: 500px;
         }
+
+        #scores-data{
+            .score{
+                height: 70px;
+
+                .out-of-ten{
+                    margin-bottom: 15px;
+                }
+            }
+        }
     }
 }
 
@@ -233,6 +309,15 @@ $brown: #483519;
     #city-information{
         #info-or-city, #instructions-or-data{
             width: 600px;
+        }
+
+        #scores-data{
+            .score{
+                width: 200px;
+                height:100px;
+                margin-right: 50px;
+                float:left;
+            }
         }
     }
 }
@@ -282,6 +367,12 @@ $brown: #483519;
                 li{
                     padding-left: 15px;
                 }   
+            }
+
+            #scores-data{
+                .out-of-ten{
+                    margin-bottom: 15px; 
+                }
             }
         }
 
