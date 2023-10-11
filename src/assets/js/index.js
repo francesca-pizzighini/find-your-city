@@ -196,6 +196,3 @@ async function appendScores(download, pathNumber, pathName, error, externalEleme
     // }catch(error){
     //     console.log('error: ', console.error)
     // }
-
-
-

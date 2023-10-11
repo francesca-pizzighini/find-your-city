@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 # Find the best city for you
 Have you ever been curious about what is the cost of living in the city of your dreams? About housing situation? Safety? With this webpage you only need to type the name of a city and you'll see all the previous data and more.
 <br>
@@ -6,8 +8,7 @@ Try the website <a href= "https://find-your-dream-city.netlify.app">here</a>.
 <br>
 Or continue reading about the project <a href= "#the-project">here</a>.
 
-<!-- screenshot progetto terminato -->
-
+<img src="src/assets/img/project-screenshot.png" alt="this image is a screenshot of the website">
 
 <details>
     <summary>Index</summary>
@@ -35,11 +36,10 @@ Or continue reading about the project <a href= "#the-project">here</a>.
         </li>
         <!-- -->
         <li>
-            <a href="#download-it-yourself">Download it yourself</a>
-                <li><a href="#git-clone">Git Clone</a></li>
-                <li><a href="#install-dependencies">Install dependencies</a></li>
-                <li><a href="#build">Build</a></li>
-                <li><a href="#open-the-project">Open the project</a></li>
+            <a href="#a-quick-guide-to-use">A quick guide to use</a>
+            <ul>
+                <li><a href="#search-for-the-city">Search for the city</a></li>
+                <li><a href="#press-search-button-and-done">Press search button and... Done!</a></li>
             </ul>
         </li>
         <!--  -->
@@ -70,9 +70,9 @@ All the information were provided by [Teleport](https://developers.teleport.org/
 
 
 ## Design inspiration 
-I'm not a good graphic designer, so part of my preparatory work consist of search for inspirational work. For this project i have 2 main source:
-- The work of a colleage in the [Start2Impact](https://www.start2impact.it) course you can see [here](https://bestcitiestolive.netlify.app). I reall like the clear design of it, expecially the upper part of the website with the city photo.
-- It was a pure coincidence, but soon after I had seen my cooeague project I visited the [Teleport](https://developers.teleport.org/api/) website to examine the API information. I noticed the structure of the two website were similar, bit i liked more the subdivision of the spaces in this one.
+I'm not a good graphic designer, so part of my preparatory work consist of search for inspirational works. For this project i have 2 main source:
+- The work of a colleage in the Start2Impact University course you can see [here](https://github.com/cristopherturazza/S2I-JS-Advanced/tree/main#best-cities-to-live-house_with_garden) by clicking the link in the readme file. I really like the clear design of it, expecially the upper part of the website with the city photo.
+- It was a pure coincidence, but soon after I had seen my colleague project I visited the [Teleport](https://developers.teleport.org/api/) website to examine the API information. I noticed the structure of the two website were similar, but i liked more the subdivision of the spaces in two column of teleport website.
 
 <p align="right"><a href="#top">return to the top</a></p>
 
@@ -100,27 +100,28 @@ To developed this website I used:
 <p align="right"><a href="#top">return to the top</a></p>
 
 
-## Download it yourself
-The first thing you need is Node.js installed, if you haven't please check [this](https://nodejs.org/it/download/) page.
-After the installation open the terminal in your computer and make sure you are in the folder you want to download the project in.
+## A quick guide to use
+The website is really simple to use, but I'll illustrate an example to make the situation even clearer.<br>
+First of all open the website [here](https://find-your-dream-city.netlify.app).
 
-### Git clone
-Type in the terminal
-`git clone https://github.com/francesca-pizzighini/find-your-city.git`
-Then open the project folder in your code editor and make sure the terminal is now indicating this folder.
+### Search for the city
+In the upper part of the website you'll se a search-bar, simply type the name of the city you want to know more about.
+<img src="src/assets/img/search-bar-screenshot.png" alt="this image is a screenshot of the website">
+For the sake of this example we'll search for Edinburgh.
+Don't worry about making typos, the autocomplete system is here to help you. Just click on the name of the city when it'll show up.
+<img src="src/assets/img/searching-edinburgh.png" alt="this image is a screenshot of the website">
 
-### Install dependencies
-Type in the terminal
-`npm i `
-
-### Build
-Type in the terminal
-`npm run build`
-
-### Open the project
-Now you have two choices:
-- open manually the website by double clicking the index.html file in the dist folder
-- type in the terminal `npm run dev`
+### Press search button and... Done!
+Once the name is fully written in the searchbar press the search button and you'll see the result, easy and quick!
+<br>
+Let's take a look at our result for completeness.
+In the upper part of the screen you'll see an image of the city you've searched.
+<img src="src/assets/img/city-image-screenshot.png" alt="this image is a screenshot of the website">
+Lowering the gaze you can see a description box with city name, the country it belongs to and a brief description of the city.
+<img src="src/assets/img/city-description-screenshot.png" alt="this image is a screenshot of the website">
+At the left of the screen you can also see a bunch of scores useful to evaluate the city. The result is rounded up to the nearest number in a scale from 1 to 10.
+<img src="src/assets/img/city-scores-screenshot.png" alt="this image is a screenshot of the website">
+And that's it, you can obtain this data for every city in the database.
 
 <p align="right"><a href="#top">return to the top</a></p>
 
