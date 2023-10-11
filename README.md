@@ -52,12 +52,12 @@ Or continue reading about the project <a href= "#the-project">here</a>.
 ## The project
 This project is part of my journey in learning to code with [Start2Impact University](https://www.start2impact.it). This is my second project with JavaScript language, and concludes JavaScript Advanced unity.
 <br>
-Created in 2023
+Created in 2023.
 
 ### Prerequisite
 The assignment for this project was to built a website with a searchbar. If the user writes the name of a city inside this searchbar it will appear data about the quality of life in this city.
 <br>
-All the information were provided by [Teleport](https://developers.teleport.org/api/)
+All the information were provided by [Teleport](https://developers.teleport.org/api/).
 
 ### Technical requisite 
 - App must be developed with JavaScript
@@ -83,8 +83,8 @@ To developed this website I used:
 ### Languages
 - HTML
 - CSS
-- Bootstrap 5
-- SASS
+- [Bootstrap 5](https://getbootstrap.com)
+- [SASS](https://sass-lang.com)
 - JavaScript
 
 ### Libraries
@@ -106,29 +106,28 @@ First of all open the website [here](https://find-your-dream-city.netlify.app).
 
 ### Search for the city
 In the upper part of the website you'll se a search-bar, simply type the name of the city you want to know more about.
-<img src="src/assets/img/search-bar-screenshot.png" alt="this image is a screenshot of the website">
+<img margin="10px" src="src/assets/img/search-bar-screenshot.png" alt="this image is a screenshot of the website">
 For the sake of this example we'll search for Edinburgh.
 Don't worry about making typos, the autocomplete system is here to help you. Just click on the name of the city when it'll show up.
 <img src="src/assets/img/searching-edinburgh.png" alt="this image is a screenshot of the website">
 
 ### Press search button and... Done!
 Once the name is fully written in the searchbar press the search button and you'll see the result, easy and quick!
-<br>
 Let's take a look at our result for completeness.
 In the upper part of the screen you'll see an image of the city you've searched.
 <img src="src/assets/img/city-image-screenshot.png" alt="this image is a screenshot of the website">
 Lowering the gaze you can see a description box with city name, the country it belongs to and a brief description of the city.
 <img src="src/assets/img/city-description-screenshot.png" alt="this image is a screenshot of the website">
 At the left of the screen you can also see a bunch of scores useful to evaluate the city. The result is rounded up to the nearest number in a scale from 1 to 10.
-<img src="src/assets/img/city-scores-screenshot.png" alt="this image is a screenshot of the website">
+<img align="left" height="400" src="src/assets/img/city-scores-screenshot.png" alt="this image is a screenshot of the website">
 And that's it, you can obtain this data for every city in the database.
 
 <p align="right"><a href="#top">return to the top</a></p>
 
 
 ## Contacts
-If you are intrested you can see all my works on my <a href= "https://francesca-pizzighini.github.io/Portfolio/projects.html">portfolio</a>, or you can visit my GitHub Repository [here](https://github.com/francesca-pizzighini)
+If you are intrested you can see all my works on my <a href= "https://francesca-pizzighini.github.io/Portfolio/projects.html">portfolio</a>, or you can visit my GitHub Repository [here](https://github.com/francesca-pizzighini).
 
-Feel free to contact me if you have any question/curiosity about my work. You can do it through my <a href= "https://www.linkedin.com/in/francesca-pizzighini-20b4061b0">LinkedIn Profile</a> or in the contact page of my portfolio [here](https://francesca-pizzighini.github.io/Portfolio/contacts.html)
+Feel free to contact me if you have any question/curiosity about my work. You can do it through my <a href= "https://www.linkedin.com/in/francesca-pizzighini-20b4061b0">LinkedIn Profile</a> or in the contact page of my portfolio [here](https://francesca-pizzighini.github.io/Portfolio/contacts.html).
 
 <p align="right"><a href="#top">return to the top</a></p>
