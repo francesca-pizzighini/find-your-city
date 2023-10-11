@@ -74,9 +74,7 @@ function select(event){
 };
 
 function autocompleteMatch(value){
-    while(suggestioUl.firstChild){
-        suggestioUl.removeChild(suggestioUl.firstChild);
-    }
+    eraseFirstChild(suggestioUl);
 
     if(value == ''){
         failedResearchAlert.classList.remove('d-none')
