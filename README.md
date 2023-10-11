@@ -118,8 +118,9 @@ In the upper part of the screen you'll see an image of the city you've searched.
 <img src="src/assets/img/city-image-screenshot.png" alt="this image is a screenshot of the website">
 Lowering the gaze you can see a description box with city name, the country it belongs to and a brief description of the city.
 <img src="src/assets/img/city-description-screenshot.png" alt="this image is a screenshot of the website">
-At the left of the screen you can also see a bunch of scores (like the one in photo) useful to evaluate the city. The result is rounded up to the nearest number in a scale from 1 to 10. And that's it, you can obtain this data for every city in the database.
-<img src="src/assets/img/city-housing-screenshot.png" alt="this image is a screenshot of the website">
+At the left of the screen you can also see a bunch of scores (like the one in photo) useful to evaluate the city. The result is rounded up to the nearest number in a scale from 1 to 10.
+<img src="src/assets/img/city-scores-screenshot.png" alt="this image is a screenshot of the website">
+And that's it, you can obtain this data for every city in the database.
 
 <p align="right"><a href="#top">return to the top</a></p>
 
