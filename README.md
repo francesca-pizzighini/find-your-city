@@ -106,7 +106,7 @@ First of all open the website [here](https://find-your-dream-city.netlify.app).
 
 ### Search for the city
 In the upper part of the website you'll se a search-bar, simply type the name of the city you want to know more about.
-<img margin="10px" src="src/assets/img/search-bar-screenshot.png" alt="this image is a screenshot of the website">
+<img src="src/assets/img/search-bar-screenshot.png" alt="this image is a screenshot of the website">
 For the sake of this example we'll search for Edinburgh.
 Don't worry about making typos, the autocomplete system is here to help you. Just click on the name of the city when it'll show up.
 <img src="src/assets/img/searching-edinburgh.png" alt="this image is a screenshot of the website">
@@ -115,11 +115,11 @@ Don't worry about making typos, the autocomplete system is here to help you. Jus
 Once the name is fully written in the searchbar press the search button and you'll see the result, easy and quick!
 Let's take a look at our result for completeness.
 In the upper part of the screen you'll see an image of the city you've searched.
-<img src="src/assets/img/city-image-screenshot.png" alt="this image is a screenshot of the website">
+<img margin="10" src="src/assets/img/city-image-screenshot.png" alt="this image is a screenshot of the website">
 Lowering the gaze you can see a description box with city name, the country it belongs to and a brief description of the city.
 <img src="src/assets/img/city-description-screenshot.png" alt="this image is a screenshot of the website">
 At the left of the screen you can also see a bunch of scores useful to evaluate the city. The result is rounded up to the nearest number in a scale from 1 to 10.
-<img align="left" height="400" src="src/assets/img/city-scores-screenshot.png" alt="this image is a screenshot of the website">
+<img height="300" src="src/assets/img/city-scores-screenshot.png" alt="this image is a screenshot of the website">
 And that's it, you can obtain this data for every city in the database.
 
 <p align="right"><a href="#top">return to the top</a></p>
