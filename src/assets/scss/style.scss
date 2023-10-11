@@ -30,11 +30,10 @@ $brown: #483519;
         background-size: cover ;
         background-position: center;
         position: relative;
-        
 
         h1{
             color: $light-color;
-            font-size: 3rem;
+            font-size: 40px;
             text-transform: uppercase;
             width: fit-content;
             z-index: 9;
@@ -58,12 +57,9 @@ $brown: #483519;
                     border: none;
                 }
 
-                button{
+                #search-btn{
                     width: 50px;
                     border: 0px;
-                    border-radius: 0px;
-                }
-                #search-btn{
                     border-top-right-radius: 5px;
                     border-bottom-right-radius: 5px;
                 }
@@ -162,11 +158,10 @@ $brown: #483519;
                     font-size: 20px;
                     margin-bottom: 5px;
                 }
+
                 .out-of-ten{
                     margin-top: 0px;
                     margin-bottom: 25px;
-                }
-                .out-of-ten{
                     width: 202px;
                     height: 12px;
                     background-color: $brown;
@@ -227,19 +222,11 @@ $brown: #483519;
 }
 
 
-
-
-   
-
-
-
-
-
 //media queries
 @media only screen and (min-width: 400px) and (max-width: 499px) {
     header{
         h1{
-            font-size: 4rem;
+            font-size: 60px;
         }
     }
 
@@ -253,7 +240,7 @@ $brown: #483519;
 @media only screen and (min-width: 500px) and (max-width: 699px) {
     header{
         h1{
-            font-size: 5rem;
+            font-size: 80px;
         }
 
         #failed-research-alert{
@@ -283,7 +270,7 @@ $brown: #483519;
 @media only screen and (min-width: 700px) and (max-width: 899px) {
     header{
         h1{
-            font-size: 6rem;
+            font-size: 100px;
         }
 
         #search-bar-wrapper{
@@ -298,6 +285,7 @@ $brown: #483519;
                     width: 400px;
                 }
             }
+
             #failed-research-alert{
                 width: 500px;
                 position: relative;
@@ -325,7 +313,7 @@ $brown: #483519;
 @media only screen and (min-width: 900px){
     header{
         h1{
-            font-size: 7rem;
+            font-size: 140px;
         }
 
         #search-bar-wrapper{
@@ -340,6 +328,7 @@ $brown: #483519;
                     width: 400px;
                 }
             }
+
             #failed-research-alert{
                 width: 600px;
                 position: relative;

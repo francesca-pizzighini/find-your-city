@@ -1,8 +1,9 @@
 import '../scss/style.scss'
-
 import * as bootstrap from 'bootstrap'
+
 import axios from 'axios';
 const _ = require('lodash');
+
 
 //favicon
 import appendFavicon from './favicon';
@@ -16,6 +17,11 @@ function createElement(element, externalElement, classList, idName ){
     externalElement.appendChild(element);
 }
 
+async function eraseFirstChild(element){
+    while(element.firstChild){
+        element.removeChild(element.firstChild)
+    };
+}
 
 
 //searchbar + download city from api
@@ -86,37 +92,30 @@ function autocompleteMatch(value){
         if(city.match(reg)){
             return city
         }
-    })
-    
+    })   
 };
 
-
-
-
-
-
-//City data
+//change dinamically city data
 //setup
+//for city name
 let bannerName = document.getElementById('banner-name')
 let h2CityName = document.getElementById('city-name')
 let nameOfTheCity;
-
+//for city continent
 let continent = document.getElementById('continent')
 let continentName;
-
+//for city image
 let banner = document.getElementById('banner');
-
+//for city summary
 let summaryOrPresentation = document.getElementById('summary-or-presentation');
 let summarytext;
-
+// for cityscores
 let instructionsOrScores = document.getElementById('instruction-scores');
 let scoresData = document.getElementById('scores-data')
 
-
-
-
-
+//function on search button
 let searchBtn = document.getElementById('search-btn');
+
 searchBtn.addEventListener('click', search);
 
 async function search(){
@@ -150,36 +149,9 @@ async function search(){
     categoryNumber.forEach((number)=>{
         appendScores(cityScores, `data.categories.${number}.score_out_of_10`, `data.categories.${number}.name`, 'An error occurred,please try realoding the page', scoresData);
     })
-
-    
-
-
-
-    
-
-
-
-
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-    
-    
-
-    // let quebec = await axios.get(`https://api.teleport.org/api/urban_areas/slug:quebec/`);
-    // console.log(quebec);
-    
-    // appendInfo()
 }
 
+//adjust city name for researchin data with the api
 function adjustValue(value){
     value = value.toLowerCase();
     value = value.trim();
@@ -187,6 +159,7 @@ function adjustValue(value){
     return value;
 }
 
+//append data on the page
 async function appendInfo(download, path, error, element, text){
     text = await _.get(download, `${path}`, `${error}` );
     element.innerText = text;
@@ -195,12 +168,6 @@ async function appendInfo(download, path, error, element, text){
 async function appendHtml(download, path, error, element, externalElement){
     element = await _.get(download, `${path}`, `${error}` );
     externalElement.innerHTML += element;
-}
-
-async function eraseFirstChild(element){
-    while(element.firstChild){
-        element.removeChild(element.firstChild)
-    };
 }
 
 async function appendScores(download, pathNumber, pathName, error, externalElement){
@@ -214,25 +181,6 @@ async function appendScores(download, pathNumber, pathName, error, externalEleme
     createElement(divName, externalElement, 'score', ' ');
     divName.innerHTML += `<p>${name} : ${number}</p><div class="out-of-ten"><div class="bg-lightcolor lenght-${number}"></div></div>`;
 }
-
-// async function appendScores(divName, number, name, download, pathNumber, pathName, error, externalElement){
-//     divName = document.createElement('div');
-    
-//     number = await _.get(download, pathNumber, error);
-//     number = Math.round(number);
-
-//     name = await _.get(download, pathName, error);
-
-//     createElement(divName, externalElement, ' ', ' ');
-//     divName.innerHTML += `<p>${name} : ${number}</p><div class="bg-lightcolor lenght-${number}"></div>`;
-// }
-
-
-
-
-
-
-
 
     // try{
     //     let download = await axios.get(`https://api.teleport.org/api/urban_areas/slug:adelaide/`);
