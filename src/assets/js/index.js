@@ -32,7 +32,7 @@ let failedResearchAlert = document.getElementById('failed-research-alert');
 
 let ul = document.createElement('ul');
 createElement(ul, suggestion, 'list-group', 'suggestion-ul');
-let suggestioUl = document.getElementById('suggestion-ul');
+let suggestionUl = document.getElementById('suggestion-ul');
 
 let cityName;
 
@@ -43,13 +43,14 @@ async function createArrayOfCity(){
         console.log(download);
     
         let cityList = _.get(download, 'data._links.ua:item');
+        console.log(cityList)
         cityList.forEach(city => {
             arrayOfCity.push(city.name)
         });
     }catch(e){
         console.log('Error: ', e);
         failedResearchAlert.classList.remove('d-none')
-        failedResearchAlert.innerText = 'An error occured, try realoading the page. If the error persist you can signal it at https://github.com/francesca-pizzighini/find-your-city';
+        failedResearchAlert.innerText = 'An error occured while downloading the resources, try realoading the page. If the error persist you can signal it at https://github.com/francesca-pizzighini/find-your-city';
     }
 };
 createArrayOfCity();
@@ -76,7 +77,7 @@ function select(event){
 };
 
 function autocompleteMatch(value){
-    eraseFirstChild(suggestioUl);
+    eraseFirstChild(suggestionUl);
 
     if(value == ''){
         failedResearchAlert.classList.remove('d-none');
@@ -151,6 +152,9 @@ async function search(){
 
 //adjust city name for researchin data with the api
 function adjustValue(value){
+    if(value == 'Galway' || value =='galway'){
+        return 'gaillimh'
+    }
     value = value.toLowerCase();
     value = value.trim();
     value = value.replaceAll(' ', '-');
