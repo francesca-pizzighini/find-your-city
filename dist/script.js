@@ -28056,6 +28056,7 @@ let cityName;
 async function createArrayOfCity(){
     try{
         let download = await lib_axios.get(`https://api.teleport.org/api/urban_areas/`);
+        console.log(download);
     
         let cityList = _.get(download, 'data._links.ua:item');
         cityList.forEach(city => {
