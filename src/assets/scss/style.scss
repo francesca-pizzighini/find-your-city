@@ -15,6 +15,7 @@ $brown: #483519;
         background-color: $brown;
         font-family: 'Oswald', sans-serif;
         font-size: 20px;
+        font-weight: 400;
         color: $dark-color;
 
         .wrapper{
@@ -37,6 +38,7 @@ $brown: #483519;
             text-transform: uppercase;
             width: fit-content;
             z-index: 9;
+            font-weight: 600;
         } 
 
         #search-bar-wrapper{
@@ -102,14 +104,20 @@ $brown: #483519;
         h2{
             font-size: 50px;
             text-transform: uppercase;
+            font-weight: 600;
         }
 
         h3{
             font-size: 30px;
+            font-weight: 500;
         }
 
         p{
             font-size: 16px;
+
+            b{
+                font-weight: 600;
+            }
 
             span{
                 color: #B4BBBB;

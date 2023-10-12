@@ -45,9 +45,10 @@ async function createArrayOfCity(){
         cityList.forEach(city => {
             arrayOfCity.push(city.name)
         });
-        // console.log(arrayOfCity)
-    }catch(error){
-        console.log('Error: ', console.error);
+    }catch(e){
+        console.log('Error: ', e);
+        failedResearchAlert.classList.remove('d-none')
+        failedResearchAlert.innerText = 'An error occured, try realoading the page. If the error persist you can signal it at https://github.com/francesca-pizzighini/find-your-city';
     }
 };
 createArrayOfCity();
@@ -122,7 +123,7 @@ async function search(){
         let imageUrl = await _.get(cityImage, 'data.photos.0.image.web', 'An error occurred,please try realoding the page');
         banner.style.backgroundImage = `url(${imageUrl})`;
 
-        //description and scores
+       
         let cityScores = await axios.get(`https://api.teleport.org/api/urban_areas/slug:${urlValue}/scores/`);
 
         //summary
@@ -179,18 +180,3 @@ async function appendScores(download, pathNumber, pathName, error, externalEleme
     createElement(divName, externalElement, 'score', ' ');
     divName.innerHTML += `<p>${name} : ${number}</p><div class="out-of-ten"><div class="bg-lightcolor lenght-${number}"></div></div>`;
 }
-
-    // try{
-    //     let download = await axios.get(`https://api.teleport.org/api/urban_areas/slug:adelaide/`);
-    //     // let citylist = await _.get(download, 'data._links.ua:item', 'error')
-    //     console.log(download);
-    //     let cityid = await _.get(download, 'data.ua_id', 'error')
-    //     let cityN =await _.get(download, 'data.slug', 'error')
-    //     console.log(cityN)
-    //     let details = await axios.get(`https://api.teleport.org/api/urban_areas/slug:${cityN}/details`)
-    //     console.log(details)
-    //     let tz = await _.get(details, 'data._links.curies.5.href', 'error')
-    //     console.log(tz)
-    // }catch(error){
-    //     console.log('error: ', console.error)
-    // }
