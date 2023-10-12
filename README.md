@@ -34,6 +34,16 @@ Or continue reading about the project <a href= "#the-project">here</a>.
                 <li><a href="#free-api">Free API</a></li>
             </ul>
         </li>
+        <!--  -->
+        <li>
+            <a href="#download-it-yourself">Download it yourself</a>
+            <ul>
+                <li><a href="#git-clone">Git Clone</a></li>
+                <li><a href="#install">Install</a></li>
+                <li><a href="#npm-build">Npm build</a></li>
+                <li><a href="#open-the-project">Open the project</a></li>
+            </ul>
+        </li>
         <!-- -->
         <li>
             <a href="#a-quick-guide-to-use">A quick guide to use</a>
@@ -98,6 +108,31 @@ To developed this website I used:
 * [Teleport](https://developers.teleport.org/api/)
 
 <p align="right"><a href="#top">return to the top</a></p>
+
+## Download it yourself
+ The first thing you need is Node.js installed, if you haven't please check [this](https://nodejs.org/it/download/) page.
+ After the installation open the terminal in your computer and make sure you are in the folder you want to download the project in.
+
+ ### Git clone
+ Type in the terminal
+ `git clone https://github.com/francesca-pizzighini/find-your-city.git`
+ Then open the project folder in your code editor and make sure the terminal is now indicating this folder.
+
+ ### Install
+ Type in the terminal
+ `npm i `
+ to install all the dependencies indicated in the package.json file
+
+ ### Npm build
+ Type in the terminal
+ `npm run build`
+
+ ### Open the project
+ Now you have two choices:
+ - open manually the website by double clicking the index.html file in the dist folder
+ - type in the terminal `npm run dev`
+
+ <p align="right"><a href="#top">return to the top</a></p>
 
 
 ## A quick guide to use
