@@ -1,5 +1,5 @@
-import '../scss/style.scss'
-import * as bootstrap from 'bootstrap'
+import '../scss/style.scss';
+import * as bootstrap from 'bootstrap';
 
 import axios from 'axios';
 const _ = require('lodash');
@@ -7,7 +7,7 @@ const _ = require('lodash');
 
 //favicon
 import appendFavicon from './favicon';
-document.head.appendChild(appendFavicon())
+document.head.appendChild(appendFavicon());
 
 
 //useful functions
@@ -19,7 +19,7 @@ function createElement(element, externalElement, classList, idName ){
 
 async function eraseFirstChild(element){
     while(element.firstChild){
-        element.removeChild(element.firstChild)
+        element.removeChild(element.firstChild);
     };
 }
 
@@ -31,7 +31,7 @@ let arrayOfCity = [];
 let failedResearchAlert = document.getElementById('failed-research-alert');
 
 let ul = document.createElement('ul');
-createElement(ul, suggestion, 'list-group', 'suggestion-ul')
+createElement(ul, suggestion, 'list-group', 'suggestion-ul');
 let suggestioUl = document.getElementById('suggestion-ul');
 
 let cityName;
@@ -77,39 +77,29 @@ function autocompleteMatch(value){
     eraseFirstChild(suggestioUl);
 
     if(value == ''){
-        failedResearchAlert.classList.remove('d-none')
-        suggestion.classList.add('d-none')
-        failedResearchAlert.innerText = 'Error: please type the name of the city you want to check'
-        return []
+        failedResearchAlert.classList.remove('d-none');
+        suggestion.classList.add('d-none');
+        failedResearchAlert.innerText = 'Error: please type the name of the city you want to check';
+        return [];
     }
     
-    failedResearchAlert.classList.add('d-none')
-    suggestion.classList.remove('d-none')
+    failedResearchAlert.classList.add('d-none');
+    suggestion.classList.remove('d-none');
     const reg = new RegExp(`^${value}`, 'i');
     return arrayOfCity.filter(city =>{
         if(city.match(reg)){
-            return city
+            return city;
         }
     })   
 };
 
 //change dinamically city data
 //setup
-//for city name
-let bannerName = document.getElementById('banner-name')
-let h2CityName = document.getElementById('city-name')
-let nameOfTheCity;
-//for city continent
-let continent = document.getElementById('continent')
-let continentName;
 //for city image
 let banner = document.getElementById('banner');
-//for city summary
-let summaryOrPresentation = document.getElementById('summary-or-presentation');
-let summarytext;
 // for cityscores
 let instructionsOrScores = document.getElementById('instruction-scores');
-let scoresData = document.getElementById('scores-data')
+let scoresData = document.getElementById('scores-data');
 
 //function on search button
 let searchBtn = document.getElementById('search-btn');
@@ -117,54 +107,64 @@ let searchBtn = document.getElementById('search-btn');
 searchBtn.addEventListener('click', search);
 
 async function search(){
-    let urlValue =  await adjustValue(cityName)
-    //Name and country
-    let cityInfo = await axios.get(`https://api.teleport.org/api/urban_areas/slug:${urlValue}/`);
-    
-    appendInfo(cityInfo, 'data.name', 'An error occurred,please try realoding the page', bannerName, nameOfTheCity);
-    appendInfo(cityInfo, 'data.name', 'An error occurred,please try realoding the page', h2CityName, nameOfTheCity);
+    try{
+        let urlValue =  await adjustValue(cityName);
+        //Name and country
+        let cityInfo = await axios.get(`https://api.teleport.org/api/urban_areas/slug:${urlValue}/`);
+        
+        appendInfo(cityInfo, 'data.name', 'An error occurred,please try realoding the page', 'banner-name');
+        appendInfo(cityInfo, 'data.name', 'An error occurred,please try realoding the page', 'city-name');
 
-    appendInfo(cityInfo, 'data.continent', 'An error occurred,please try realoding the page', continent, continentName);
+        appendInfo(cityInfo, 'data.continent', 'An error occurred,please try realoding the page', 'continent');
 
-    //image banner
-    let cityImage = await axios.get(`https://api.teleport.org/api/urban_areas/slug:${urlValue}/images/`)
-    let imageUrl = await _.get(cityImage, 'data.photos.0.image.web', 'An error occurred,please try realoding the page')
-    banner.style.backgroundImage = `url(${imageUrl})`;
+        //image banner
+        let cityImage = await axios.get(`https://api.teleport.org/api/urban_areas/slug:${urlValue}/images/`);
+        let imageUrl = await _.get(cityImage, 'data.photos.0.image.web', 'An error occurred,please try realoding the page');
+        banner.style.backgroundImage = `url(${imageUrl})`;
 
-    //description and scores
-    let cityScores = await axios.get(`https://api.teleport.org/api/urban_areas/slug:${urlValue}/scores/`);
-    console.log(cityScores)
+        //description and scores
+        let cityScores = await axios.get(`https://api.teleport.org/api/urban_areas/slug:${urlValue}/scores/`);
 
-    //summary
-    eraseFirstChild(summaryOrPresentation);
-    appendHtml(cityScores, 'data.summary', 'An error occurred,please try realoding the page', summarytext, summaryOrPresentation);
+        //summary
+        eraseFirstChild(document.getElementById('summary-or-presentation'));
+        appendHtml(cityScores, 'data.summary', 'An error occurred,please try realoding the page', 'summary-or-presentation');
 
-    //scores
-    instructionsOrScores.innerText = 'City scores';
-    eraseFirstChild(scoresData);
+        //scores
+        instructionsOrScores.innerText = 'City scores';
+        eraseFirstChild(scoresData);
 
-    let categoryNumber = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
-    categoryNumber.forEach((number)=>{
-        appendScores(cityScores, `data.categories.${number}.score_out_of_10`, `data.categories.${number}.name`, 'An error occurred,please try realoding the page', scoresData);
-    })
+        let categoryNumber = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+        categoryNumber.forEach((number)=>{
+            appendScores(cityScores, `data.categories.${number}.score_out_of_10`, `data.categories.${number}.name`, 'An error occurred,please try realoding the page', scoresData);
+        })
+
+        input.value = '';
+    }catch(e){
+        failedResearchAlert.classList.remove('d-none')
+        failedResearchAlert.innerText = 'An error occured, try realoading the page. If the error persist you can signal it at https://github.com/francesca-pizzighini/find-your-city';
+        input.value = '';
+        console.log('Error: ', e);
+    }
 }
 
 //adjust city name for researchin data with the api
 function adjustValue(value){
     value = value.toLowerCase();
     value = value.trim();
-    value = value.replaceAll(' ', '-')
+    value = value.replaceAll(' ', '-');
     return value;
 }
 
 //append data on the page
-async function appendInfo(download, path, error, element, text){
-    text = await _.get(download, `${path}`, `${error}` );
+async function appendInfo(download, path, error, idElement){
+    let element = document.getElementById(`${idElement}`);
+    let text = await _.get(download, `${path}`, `${error}` );
     element.innerText = text;
 }
 
-async function appendHtml(download, path, error, element, externalElement){
-    element = await _.get(download, `${path}`, `${error}` );
+async function appendHtml(download, path, error, idExternalElement){
+    let externalElement = document.getElementById(`${idExternalElement}`);
+    let element = await _.get(download, `${path}`, `${error}` );
     externalElement.innerHTML += element;
 }
 
